@@ -1,0 +1,19 @@
+syntax="proto3";
+
+option go_package = "github.com/shellrean-playground/hotel-be-contract/hotel";
+
+message HotelCreate {
+  string code = 1;
+  string name = 2;
+  string address = 3;
+  int32 rate = 4;
+}
+
+message HotelResponse {
+  string code = 1;
+  string description = 2;
+}
+
+service Hotel {
+  rpc CreateHotel(HotelCreate) returns (HotelResponse){}
+}
